@@ -69,7 +69,7 @@ function ProductForm({ addProduct }) {
       <label>
         Price:
         <input 
-          type="text" 
+          type="number" 
           name="price" 
           value={formData.price} 
           onChange={handleChange} 
