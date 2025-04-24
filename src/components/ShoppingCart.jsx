@@ -13,19 +13,19 @@ function ShoppingCart({ cart, removeFromCart }) {
               <li key={`${item.id}-${index}`} className="cart-item">
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   {item.image && (
-                    <img 
-                      src={item.image} 
-                      alt={item.name} 
+                    <img
+                      src={item.image}
+                      alt={item.name}
                       className="cart-item-image"
                       onError={(e) => {
-                        e.target.onerror = null; 
+                        e.target.onerror = null;
                         e.target.src = 'https://via.placeholder.com/50x50?text=No+Img';
                       }}
                     />
                   )}
                   <span>{item.name} - ${item.price.toFixed(2)}</span>
                 </div>
-                <button 
+                <button
                   onClick={() => removeFromCart(item.id)}
                   className="remove-btn"
                 >
