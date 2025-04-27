@@ -15,7 +15,6 @@ function App() {
   const [cart, setCart] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
 
-
   const ADMIN_CREDENTIALS = {
     username: "admin",
     password: "admin123"
