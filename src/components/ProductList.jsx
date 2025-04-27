@@ -4,12 +4,11 @@ import { useSearchParams } from 'react-router-dom';
 function ProductList({ products, addToCart }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [filteredProducts, setFilteredProducts] = useState(products); // Initialize with all products
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const categories = ['All', 'Fruits', 'Vegetables', 'Dairy', 'Bakery', 'Meat'];
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    // Apply filters whenever search term, category, or products change
     const filtered = products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
@@ -18,7 +17,6 @@ function ProductList({ products, addToCart }) {
     setFilteredProducts(filtered);
   }, [searchTerm, selectedCategory, products]);
 
-  // Handle initial category filter from URL
   useEffect(() => {
     const urlCategory = searchParams.get('category');
     if (urlCategory) {
@@ -28,7 +26,6 @@ function ProductList({ products, addToCart }) {
 
   return (
     <div className="product-list-container">
-      {/* Sidebar */}
       <div className="product-sidebar">
         <div className="search-box">
           <input
@@ -55,7 +52,6 @@ function ProductList({ products, addToCart }) {
         </div>
       </div>
 
-      {/* Product Grid */}
       <div className="product-list">
         <h2>{selectedCategory === 'All' ? 'All Products' : selectedCategory}</h2>
         <p className="product-count">{filteredProducts.length} items</p>
