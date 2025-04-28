@@ -39,7 +39,7 @@ function AdminLogin({ onLogin }) {
           />
         </div>
         {error && <div className="error-message">{error}</div>}
-        <button type="submit">Login</button>
+        <button id="login-btn" type="submit">Login</button>
       </form>
     </div>
   );
