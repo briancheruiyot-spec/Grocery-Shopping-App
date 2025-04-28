@@ -495,7 +495,19 @@ body {
   color: #e74c3c;
   margin: 1rem 0;
 }
-
+#login-btn{
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+}
 .logout-btn {
   background: none;
   border: none;
@@ -529,7 +541,8 @@ body {
 /* Search Box */
 .search-box {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 80%;
 }
 
 .search-box input {
